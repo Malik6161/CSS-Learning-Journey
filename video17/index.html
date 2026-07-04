@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules for Styling in CSS
+    </title>
+    <!-- Here i use inline CSS for the poper understanding because i want make the changes in the file after the work. This type of comments use in the html and the comments /* are use in the CSS.-->
+    <style>
+        /*Elements Slector */
+
+        div {
+            background-color: yellowgreen;
+        }
+
+        /* Class slector*/
+
+        .Yellow {
+            background-color: yellow;
+        }
+
+        /* id slector */
+
+        #Aqua {
+            background-color: aqua;
+        }
+
+        /* child slector */
+
+        div>p {
+            color: black;
+            background-color: blueviolet;
+        }
+
+        /* Decendent slector : It means the paragraph is in the div regarless of the other tags means if the paragraph is in the div > article > paragrah . if here we use the child slector than it only finds the paragaraph inside the div and not in the article . SO we use the decendent slector*/
+        div p {
+            color: black;
+        }
+
+        /* Universal slector */
+        * {
+            margin: 8px;
+            padding: 8px;
+             box-sizing:border-box;
+        }
+        /* Pesudo Slector */
+        a:visited{
+            color: yellowgreen;
+        }
+        a:link{
+            color: brown;
+        }
+        a:active{
+            background-color: black;
+        }
+        a:hover{
+            background-color: royalblue;
+            color:whitesmoke;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>SLECTORS IN THE CSS</h1>
+    <ol>
+        <li>Element slector</li>
+        <li>Class slector</li>
+        <li>Id slector</li>
+        <li>Child slector</li>
+        <li>Desendent slector</li>
+    </ol>
+    <h2>Element and Child slector</h2>
+    <div> i am a div
+        <p>Thats the first div and i am using here the child slector to make the paragraph color black and the
+            background color blueviolet. The the paragraph is the child of the div so the child slector changes the
+            colors of the child paragraph. If there is another paragraph occurs in the another div than it also changes
+            the colot accordingly.</p>
+    </div>
+    <h2> Class slector or Desendent slector </h2>
+    <div class="yellow">
+        <article>
+            <p> Decendent slector : It means the paragraph is in the div regarless of the other tags means if the
+                paragraph is in the div > article > paragrah . if here we use the child slector than it only finds the
+                paragaraph inside the div and not in the article . SO we use the decendent slector</p>
+        </article>
+    </div>
+    <h2> Id slector</h2>
+    <div id="Aqua">
+        Thats the third
+    </div>
+    <a href="http://www.google.com"> Google</a>
+    <a href="http://www.instagram.com"> instagram</a>
+
+</body>
+
+</html>

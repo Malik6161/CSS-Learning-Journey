@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS box model</title>
+    <style>
+        /* {
+            we use universal selector to select all the elements in the page 
+        } */
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        /* {
+           we use class slector to select the element with class name box and box1 and box2 
+        } */
+        .box {
+            background-color: red;
+            /* background color of the box only shows in the padding and content area */
+
+            margin: 20px;
+            /* gap betweeen the boxes.Moving the box away from other boxes. */
+
+            border: 2px solid black;
+        }
+
+        .box1 {
+            color: aliceblue;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+
+            /* space between the content and the border of the box.Packing inside the box. */
+            box-sizing: boarder box;
+
+        }
+
+        .box2 {
+            color: aliceblue;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            /* space between the content and the border of the box.Packing inside the box. */
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>CSS box model</h1>
+    <!-- {
+        we use div element to create a box and we use class name box and box1 and box2 to style the box as you know we gave more than one class name to a div element and use the space to separate the class names and and than use the class name to style the box and we use p element to add text inside the box
+    } -->
+    <div class="box box1">
+        <p>I am Box 1</p>
+    </div>
+    <div class="box box2">
+        <p>I am Box 2</p>
+    </div>
+</body>
+
+</html>
