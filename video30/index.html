@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables in CSS</title>
+    <style>
+
+        /*In root i make a global variable that use to change the color from muliple places in a sigle way. */
+
+    :root{
+    --color: blue;
+    --saccolor: rgb(108, 108, 172);
+    }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div :first-child{
+            background-color:var(--saccolor)
+        }
+        .cantainer{
+            background-color:var(--color);
+            color: aliceblue;
+
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            list-style: none;
+            padding: 34px;
+        }
+
+        /*Here i make a local variable by using the value of the global variable in another block and changes its values to adjust the color*/
+
+        ul li:first-child{
+            --saccolor: rgb(108, 172, 113);
+           background-color: var(--saccolor);
+           border: 2px solid black;
+           margin: 20px;
+           padding: 20px;
+        }
+        ul li:nth-child(2){
+            --saccolor: rgb(108, 172, 113);
+           background-color: var(--saccolor);
+           border: 2px solid black;
+           margin: 20px;
+           padding: 20px;
+        }
+        ul li:nth-child(3){
+            --saccolor: rgb(108, 172, 113);
+           background-color: var(--saccolor);
+           border: 2px solid black;
+           margin: 20px;
+           padding: 20px;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+      </ul>
+    </div>
+    <div class="cantainer">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illum
+      voluptatibus ea nemo animi harum eveniet eos modi. Tempore numquam porro
+      magnam perspiciatis impedit tenetur ullam ea nulla ex architecto.
+      Obcaecati voluptates omnis repellendus sed fugit aspernatur, placeat,
+      nihil esse eius ratione et fuga explicabo.
+    </div>
+  </body>
+</html>
