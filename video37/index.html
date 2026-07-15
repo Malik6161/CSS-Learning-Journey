@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS FlexBox</title>
+    <style>
+      .container {
+        display: flex;
+        border: 2px solid black;
+        height: 80vh;
+        width: 350px;
+        /* justify-content: center; thats the real property there is no justify items in the flex box */
+
+        /* align-items: center used when the items only in one line. if we have more than one lines than we use the align-content: conter;*/
+
+        /* align-items: center; */
+        /* align-content: center; */
+
+        /* flex-wrap: wrap-reverse; */
+        flex-flow: row wrap;
+        /* gap: 30px; */
+
+        row-gap: 30px;
+        column-gap: 30px;
+
+        /* gap: 30px 10px; used for both the rows and columns .The Ist one is for the row and and the second one is for the column */
+      }
+      .item {
+        flex-grow: 1;
+        flex-basis: 0;
+        height: 92px;
+        /* width: 92px; */
+
+        /* Here i found a error because the width is defined first for all the items . If we use the fixed width than the flexgrow will not work properly .By defult value of flex grow is 0 which we written as flex-basis: 0; */
+
+        border: 2px solid black;
+        /* margin: 4px; */
+        background-color: blueviolet;
+      }
+      .item {
+        width: 150px;
+        height: 92px;
+      }
+      .item1 {
+        flex-grow: 2;
+        flex-basis: 0;
+        
+        align-self: stretch ;
+      }
+      .order-1 {
+        order: 1;
+      }
+      .order-2 {
+        order: 2;
+      }
+      .order-3 {
+        order: 3;
+      }
+      /* flex-shrink decides how much an item should shrink when there isn't enough space inside the container.
+      flex-shrink: 1;
+      flex-shrink:0;
+
+❌ Never shrink.
+
+flex-shrink:1;
+
+✅ Normal shrinking.
+
+flex-shrink:2;
+twice shrinking */
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="item item1">1</div>
+        <div class="item">2</div>
+        <div class="item order-3">3</div>
+      </div>
+    </main>
+  </body>
+</html>

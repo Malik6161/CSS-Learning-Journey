@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Float & Clear</title>
+    <style>
+      .cards {
+        border: 2px solid black;
+
+        /* For clearing the overflow*/
+
+        display: flow-root;
+      }
+      .card {
+        border: 2px solid blue;
+      }
+      .cards :nth-child(3) {
+        background-color: aqua;
+        clear: both;
+      }
+      
+      img {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cards">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEZ5heglrPco2dFMCLKjBKMCCo3WfoXucVAPfgEfaBsyBVMqaF5iYh1nE&s=10"
+        alt=""
+        width="230px"
+      />
+      <div class="card">
+        <h2>Card 1</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ipsum
+          necessitatibus error dolor, eveniet ratione delectus qui. Quisquam,
+          cumque laboriosam debitis sunt natus nesciunt eos minima laborum.
+          Dolorum dignissimos laudantium odio, molestias, sint mollitia nisi
+          fugiat non ab doloremque facere temporibus? Eius enim explicabo, cum,
+          labore, fugit ab dolorem nisi dolorum neque quam aspernatur.
+        </p>
+      </div>
+      <div class="card">
+        <h2>
+          Card 2
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero
+            dolore magnam necessitatibus reiciendis quis fuga distinctio fugit
+            commodi eum, voluptatum at perspiciatis dolores quod asperiores
+            ipsam ipsa delectus, temporibus earum expedita, aliquid ab placeat
+            unde deserunt quaerat! Autem repudiandae suscipit culpa tempora rem
+            delectus eveniet corrupti natus sequi eligendi reprehenderit amet
+            vero qui, odio numquam atque, inventore eos ducimus animi eius illo.
+            Esse saepe incidunt optio adipisci! Incidunt beatae consequuntur nam
+            eos excepturi veniam. Molestiae totam vel, velit perspiciatis eum
+            maiores, adipisci quo porro a rem, officia dolores dolor! Cum
+            voluptatem modi laboriosam harum, at odit itaque ex necessitatibus
+            commodi earum, beatae veritatis nesciunt sunt hic? Exercitationem
+            laboriosam, repellendus veritatis inventore dolore natus in a nulla?
+            Sunt dignissimos numquam consectetur, ut asperiores quis mollitia
+            labore maxime soluta dolorum quos aliquam rem similique inventore?
+            Aperiam, dolorum quas quos excepturi est amet harum accusamus modi
+            ut vero nesciunt maiores officiis tempore nisi. Quasi, laudantium
+            error. Doloribus quibusdam iusto quam odio molestiae sequi
+            recusandae ipsam dolore eveniet, cumque et inventore accusamus
+            debitis ad, delectus voluptas autem omnis dolor. Delectus error
+            facere cum laudantium, consequuntur assumenda labore omnis nihil
+            itaque veritatis ex dolorem ipsam sed exercitationem architecto
+            corrupti saepe adipisci eum dolor dignissimos at quidem rem! Rerum,
+            voluptatibus accusantium. Cupiditate suscipit incidunt deleniti, ut
+            officia debitis exercitationem magnam officiis! Consequuntur, earum
+            quidem minima pariatur deleniti inventore minus modi eius iusto,
+            accusantium corrupti excepturi est architecto quae. Excepturi eaque
+            voluptatum, expedita error veniam dolorum, aperiam facilis quas
+            quasi maxime tempora aut nobis quod! Facere velit quo mollitia
+            quidem, quasi nihil unde temporibus molestiae harum explicabo maxime
+            necessitatibus aliquam nam soluta similique pariatur amet autem
+            porro veniam! Optio quae in laboriosam facere ad obcaecati
+            reiciendis, consequatur error cupiditate? Blanditiis, libero nobis?
+            Dolor culpa repudiandae soluta praesentium, earum unde. Libero,
+            deleniti omnis veritatis corporis placeat sit delectus quae
+            voluptate quia iure sunt assumenda, nobis voluptatem!
+            Exercitationem, similique, facere eos dolores vitae asperiores
+            quidem animi itaque veritatis sint voluptatibus quae commodi odit
+            aliquid reiciendis? Aliquam ut quisquam veniam. Laudantium
+            praesentium rem neque ex non! Dolorum nesciunt temporibus nisi,
+            excepturi corporis neque vel!
+          </p>
+        </h2>
+      </div>
+      <div class="card">card3</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors</s></title>
+    <style>
+      .boxes {
+        background-color: rgb(60, 255, 0);
+      }
+      .boxes :nth-child(2) {
+        border: 2px solid black;
+        margin: 10px;
+        padding: 3px;
+
+        background-color: blue;
+      }
+      .box::first-line {
+        color: yellow;
+      }
+
+      /*adding elements in the css dinamically using the css we also us it for after */
+
+      .boxes::before{
+        content: Malik is learning web dev;
+        color: beige;
+      }
+      .boxes::after{
+        content: Malik is learning web dev;
+        color: red;
+      }
+
+      ::selection{
+        background-color: black;
+        color: blueviolet;
+      }
+
+      /* In put slector */
+
+      input::placeholder{
+        color: black;
+        background-color: aquamarine;
+        border: 10px solid purple;
+        font-size: 10px;
+      }
+      .boxes::first-letter{
+        color: black;
+        font-size: 45px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxes">
+      <div class="box">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
+        accusantium quia saepe voluptatum, voluptas dolore ex iste temporibus.
+        Ut modi, corporis sint eius similique, earum pariatur expedita a
+        voluptatum vel vero accusamus. Minus tempora excepturi dicta
+        reprehenderit, praesentium mollitia deserunt aspernatur iste omnis
+        repudiandae voluptate sit laudantium, aliquid earum expedita atque.
+        Distinctio, adipisci accusantium expedita soluta nihil vel eius rerum
+        cupiditate id eveniet quibusdam labore enim veritatis, nemo quasi!
+        Veritatis accusamus nulla voluptas. Excepturi facere quaerat in? Illo
+        consectetur, dignissimos, beatae debitis dolorem illum cum quae iure
+        labore suscipit dolores sunt a odit? Provident sequi voluptatibus esse
+        quia voluptatem sit incidunt, fugiat accusantium illum qui ipsam aut,
+        consequuntur recusandae eos odit natus maiores ipsa enim beatae,
+        laudantium perferendis minima praesentium! Laborum optio odit vero dolor
+        molestias porro accusantium beatae veniam voluptates, harum dignissimos
+        illum, voluptatem aliquam nisi ab. Eaque architecto, laudantium
+        reiciendis nesciunt iste aliquam assumenda debitis expedita labore?
+        Excepturi quam quae dolores consequuntur, maiores cumque architecto
+        illum veniam voluptatum minima? Minus obcaecati explicabo quae autem
+        similique quis illum quia reprehenderit molestiae, amet magnam animi,
+        asperiores omnis eius ea numquam ducimus repudiandae nihil nobis neque
+        nemo iure voluptatibus quos. Ducimus suscipit facilis porro explicabo
+        vel impedit quasi repellendus, qui temporibus soluta voluptas, aliquid
+        cumque modi, non amet error aperiam reprehenderit recusandae optio.
+        Iusto quas error animi blanditiis fugit alias nostrum voluptates nam quo
+        repellat, quae omnis voluptatum nisi quidem neque. Soluta, officia sequi
+        dicta corporis architecto quae adipisci quam repudiandae cumque ut
+        maiores impedit rerum? Sapiente, amet! Minima ullam illum sed veniam,
+        nostrum itaque sapiente odio magnam tempora vero corporis error
+        doloribus molestiae similique atque rerum laudantium quia quo fugit
+        repellendus perferendis nesciunt! Doloremque earum alias adipisci,
+        dolores dolorem labore, repellendus minus molestiae recusandae mollitia
+        nihil quia eos ullam numquam ipsam nulla delectus doloribus aliquid
+        fuga, architecto ut facilis amet. Earum, est! Hic distinctio neque nam,
+        impedit nostrum culpa molestias rem quas? Voluptas asperiores impedit
+        suscipit dolorum quasi, iusto dignissimos voluptatem! Aliquam labore
+        tempore corrupti asperiores ut, temporibus dolor hic totam, saepe quidem
+        cumque iusto minus tenetur officia aspernatur itaque mollitia autem cum
+        placeat alias odio? Earum voluptatum ipsum eum quos porro dolore,
+        accusamus, consectetur quidem accusantium quo ea et ad delectus quis
+        deleniti voluptates cum asperiores saepe aut vitae officia maxime velit!
+        A nisi et expedita sint, dolores esse in dolore dicta ducimus reiciendis
+        recusandae, similique nostrum maxime quidem harum quasi error! Et
+        recusandae illum, corrupti rerum consequuntur debitis repellendus fugit
+        expedita nam aut esse doloremque unde laboriosam magni repudiandae
+        possimus in sed dolores veritatis? Ducimus dolorem tenetur officia ipsa,
+        culpa laborum officiis alias quam? Culpa, nisi aliquam quibusdam magni
+        minima voluptates reprehenderit consequuntur expedita aspernatur natus
+        eum minus alias, ipsum itaque? Maxime est dolorum eos in dicta
+        assumenda.
+      </div>
+      <div class="box">i am a box</div>
+      <div class="box">i am a box</div>
+      <input type="text" placeholder="Type Your Name Here">
+    </div>
+  </body>
+</html>
