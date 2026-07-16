@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Transform Notes</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    padding:40px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+/* Demo Container */
+
+.container{
+    width:350px;
+    height:350px;
+    background:white;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+/* Transform Demo */
+
+.box{
+    width:90px;
+    height:90px;
+    background:linear-gradient(45deg,#ffe259,#ffa751);
+    border:2px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+
+    transform:rotate(0.15turn) skewX(20deg) translateX(20px);
+
+    transition:.5s;
+}
+
+.box:hover{
+    transform:rotate(1turn) scale(1.2);
+    cursor:pointer;
+}
+
+/* Notes */
+
+.notes{
+    width:500px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.notes h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#4b3fa5;
+}
+
+.notes ul{
+    list-style:none;
+}
+
+.notes li{
+    background:#f3f4ff;
+    margin:12px 0;
+    padding:15px;
+    border-left:6px solid #6c63ff;
+    border-radius:10px;
+    transition:.4s;
+
+    animation:slideIn .7s ease forwards;
+    opacity:0;
+}
+
+/* Delay Animation */
+
+.notes li:nth-child(1){animation-delay:.2s;}
+.notes li:nth-child(2){animation-delay:.4s;}
+.notes li:nth-child(3){animation-delay:.6s;}
+.notes li:nth-child(4){animation-delay:.8s;}
+.notes li:nth-child(5){animation-delay:1s;}
+.notes li:nth-child(6){animation-delay:1.2s;}
+.notes li:nth-child(7){animation-delay:1.4s;}
+
+.notes li:hover{
+    transform:translateX(10px);
+    background:#dbe4ff;
+}
+
+@keyframes slideIn{
+    from{
+        transform:translateX(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="box">BOX</div>
+</div>
+
+<div class="notes">
+
+<h1>📘 CSS Notes</h1>
+
+<ul>
+
+<li>
+<b>rotate()</b> rotates an element. It can rotate on the X, Y, and Z axes.
+</li>
+
+<li>
+<b>skew()</b> tilts an element along the X or Y axis.
+</li>
+
+<li>
+<b>translateX()</b> moves an element horizontally. You can also use
+<b>translateY()</b> or <b>translate()</b>.
+</li>
+
+<li>
+<b>Multiple Transform Functions:</b> Use more than one transform by writing them in a single line separated by spaces.
+</li>
+
+<li>
+<b>text-align:center;</b> only centers inline content (like text) horizontally inside an element.
+</li>
+
+<li>
+<b>display:flex;</b> turns an element into a Flex Container.
+</li>
+
+<li>
+<b>Flexbox Properties:</b>
+justify-content,
+align-items,
+flex-direction,
+gap,
+flex-wrap.
+</li>
+
+</ul>
+
+</div>
+
+</body>
+</html>
