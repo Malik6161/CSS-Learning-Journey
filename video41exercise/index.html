@@ -5,48 +5,191 @@
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .logo {
-        width: 40px;
-        height: 23px;
-        /* background-color: blue; */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .logo img {
-        width: 134px;
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        background-color: #f5f7fa;
+        padding: 20px;
+      }
+      .top-banner {
+        background-color: #ffd200;
+        color: #000000;
+        text-align: center;
+        padding: 12px 20px;
+        font-weight: 500;
+      }
+  .top-banner a {
+    color: #000000;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-weight: 600;
+  }
+      header{
+        background-color: #ffffff;
+        max-width: 1200px;
+        max-width: 0 auto;
+        padding: 15px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: 1px solid #e5e7eb;
+      }
+      .navbar-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 6px;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
       nav {
         display: flex;
         justify-content: space-around;
         align-items: center; /*used when only one row*/
       }
+      .logo {
+       display: flex;
+       align-items: center;
+      }
+      .logo img {
+        width: 130px;
+        height: auto;
+        display: flex;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        align-items: center;
+      }
+      .nav-links li a {
+        text-decoration: none;
+        color: #333333;
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .nav-links li a::after {
+        content: "^";
+        transform: rotate(180deg);
+        display: inline-block;
+        font-size: 07rem;
+        margin-top: -2px;
+      }
+      .nav-links li.no-arrow a::after{
+        display: none;
+      }
+      nav.actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    .btn-download{
+      background-color: #ffd200;
+      color: #000000;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 100px 24px;
+      transition: background-color 0.2s;
+    } 
+    .btn-download:hover{
+      background-color: #e6bd00;
+    }
+    .lang-select {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #333333;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .search-icon {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #333333;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+      .search-icon::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 6px;
+        background-color: #333333;
+        transform: rotate(-45deg);
+        bottom: -5px;
+        right: -3px;
+      }
       .right ul {
         display: flex;
-        gap: 34px;
+        gap: 28px;
+        list-style: none;
       }
       .right ul li {
         list-style: none;
+        display: flex;
+        align-items: center;
       }
     </style>
   </head>
   <body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+      UE Core & Enterprise Subscriptions: Get 10% Off on your second year ⓘ 
+      <a href="#">Buy Now →</a>
+    </div>
+
+    <!-- Navigation Header -->
     <header>
-      <nav>
+      <nav class="navbar-box">
+        
+        <!-- Logo -->
         <div class="logo">
-          <img
-            src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-logo.svg"
-            alt=""
-          />
+          <img src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-logo.svg" alt="UltraEdit Logo" />
         </div>
-        <div class="right">
-          <ul>
-            <li>
-              Products
-            </li>
-            <li>Pricing</li>
-            <li>Resources</li>
-            <li>About Us</li>
-          </ul>
+
+        <!-- Center Menu Links -->
+        <ul class="nav-links">
+          <li><a href="#">Products</a></li>
+          <li class="no-arrow"><a href="#">Buy</a></li>
+          <li class="no-arrow"><a href="#">Renew</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Learn</a></li>
+          <li><a href="#">Company</a></li>
+        </ul>
+
+        <!-- Right Side Controls -->
+        <div class="nav-actions">
+          <a href="#" class="btn-download">Download</a>
+          
+          <div class="lang-select">
+            <!-- Simple Globe Emoji representation -->
+            🌐 English
+          </div>
+          
+          <div class="search-icon" title="Search"></div>
         </div>
+
       </nav>
     </header>
+
   </body>
 </html>
