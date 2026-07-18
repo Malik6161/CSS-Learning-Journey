@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transforms in CSS</title>
+    <style>
+      .box {
+        height: 50px;
+        width: 50px;
+        background-color: beige;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(0.15turn) skewX(40deg) translateX(45%)
+        /*  transform totare is also work for X, y and Z axiz. it also has the property of transform: skew()
+        and
+         also transform: translateX(), This is used the most  */
+        /* text-align: center; This only aligns inline content horizontally inside an element. */
+        /*properties of flex.
+         justify-content
+        align-items
+        flex-direction
+        gap
+        flex-wrap */
+        /*  IF we want to use multiple properties togather than just use them in a single line by giving space between them one after the other */
+
+        /* This changes the element into a Flex Container. */
+
+        /* This aligns flex items along the main axis. */
+
+        /* This aligns flex items along the cross axis. */
+      }
+      .container {
+        width: 100vh;
+        height: vh;
+        border: 2px solid purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">box</div>
+    </div>
+  </body>
+</html>
