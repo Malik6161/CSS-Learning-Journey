@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UltraEdit Landing Page</title>
+    <style>
+      /* ==========================================
+         1. BASE STYLES & COMMON VARIABLES 
+         ========================================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: #ffffff;
+        color: #333333;
+        line-height: 1.5;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* Utility class to keep layouts centered on wide displays */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ==========================================
+         2. NAVIGATION HEADER & TOP BANNER
+         ========================================== */
+      .top-banner {
+        background-color: #ffd200;
+        color: #000000;
+        text-align: center;
+        padding: 12px 20px;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+      .top-banner a {
+        color: #000000;
+        text-decoration: underline;
+        margin-left: 5px;
+        font-weight: 600;
+      }
+      header {
+        margin-top: 20px;
+      }
+      .navbar-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 6px;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo img {
+        width: 130px;
+        height: auto;
+        display: block;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+      .nav-links li a {
+        color: #333333;
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .nav-links li a::after {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-right: 2px solid #666666;
+        border-bottom: 2px solid #666666;
+        transform: rotate(45deg);
+        margin-left: 6px;
+        margin-top: -2px;
+      }
+      .nav-links li.no-arrow a::after {
+        display: none;
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-shrink: 0;
+      }
+      .btn-download {
+        background-color: #ffd200;
+        color: #000000;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 10px 24px; 
+        border-radius: 4px;
+        white-space: nowrap;
+      }
+      .lang-select {
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .search-icon {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #333333;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+      }
+      .search-icon::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 6px;
+        background-color: #333333;
+        transform: rotate(-45deg);
+        bottom: -4px;
+        right: -3px;
+      }
+
+      /* ==========================================
+         3. PERSONAL / BUSINESS TOGGLE ROW
+         ========================================== */
+      .segment-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin: 30px 0;
+      }
+      .segment-label {
+        font-weight: 500;
+      }
+      .toggle-switch {
+        width: 50px;
+        height: 26px;
+        background-color: #ffd200;
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+      }
+      .toggle-circle {
+        width: 20px;
+        height: 20px;
+        background-color: #000000;
+        border-radius: 50%;
+        position: absolute;
+        top: 3px;
+        left: 4px;
+      }
+
+      /* ==========================================
+         4. HERO SECTION 
+         ========================================== */
+      .hero-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+      .news-badge {
+        display: inline-block;
+        border: 1px solid #ffd200;
+        background-color: #fffbeb;
+        color: #855d00;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 24px;
+      }
+      .hero-left h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        color: #111111;
+        margin-bottom: 20px;
+      }
+      .hero-left p {
+        font-size: 1.15rem;
+        color: #555555;
+        margin-bottom: 30px;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+      .btn-primary {
+        background-color: #ffd200;
+        color: #000000;
+        font-weight: 600;
+        padding: 14px 28px;
+        border-radius: 4px;
+      }
+      .btn-secondary {
+        background-color: #f1f3f5;
+        color: #333333;
+        font-weight: 500;
+        padding: 14px 28px;
+        border-radius: 4px;
+      }
+      .os-support {
+        font-size: 1rem;
+        color: #666666;
+      }
+      .hero-right img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+      }
+
+      /* ==========================================
+         5. BRAND PARTNERS STRIP
+         ========================================== */
+      .brands-section {
+        background-color: #ffffff;
+        padding: 40px 0;
+        text-align: center;
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+      }
+      .brands-subtitle {
+        color: #666666;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto 30px auto;
+      }
+      .brands-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .brands-grid span {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #cccccc;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* ==========================================
+         6. PROBLEM SOLVING CARDS GRID
+         ========================================== */
+      .problems-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+        text-align: center;
+      }
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #111111;
+        margin-bottom: 50px;
+        line-height: 1.2;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .feature-card {
+        background-color: #ffffff;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-icon {
+        background-color: #ffd200;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      .feature-card h3 {
+        font-size: 1.3rem;
+        color: #111111;
+        margin-bottom: 15px;
+      }
+      .feature-card p {
+        color: #666666;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        flex-grow: 1; /* Pushes the 'More details' link to the bottom */
+      }
+      .card-link {
+        color: #111111;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      /* ==========================================
+         7. TESTIMONIALS REVIEWS SECTION
+         ========================================== */
+      .testimonials-section {
+        padding: 80px 0;
+        background-color: #ffffff;
+        text-align: center;
+      }
+      .rating-info {
+        font-size: 1.1rem;
+        color: #333333;
+        margin-bottom: 40px;
+      }
+      .stars {
+        color: #ffd200;
+        font-size: 1.3rem;
+        margin: 0 5px;
+      }
+      .testimonial-card {
+        background-color: #ffffff;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: left;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      }
+      .testimonial-card p {
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .author-name {
+        font-weight: 600;
+        color: #111111;
+        font-size: 0.95rem;
+      }
+
+      /* Responsive rules for smaller screens */
+      @media (max-width: 960px) {
+        .hero-section, .cards-grid {
+          grid-template-columns: 1fr;
+        }
+        .brands-grid {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Top Info Strip -->
+    <div class="top-banner">
+      UE Core & Enterprise Subscriptions: Get 10% Off on your second year ⓘ
+      <a href="#">Buy Now →</a>
+    </div>
+
+    <!-- Navigation Bar Box Container -->
+    <header class="container">
+      <nav class="navbar-box">
+        <div class="logo">
+          <img src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-logo.svg" alt="UltraEdit Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Products</a></li>
+          <li class="no-arrow"><a href="#">Buy</a></li>
+          <li class="no-arrow"><a href="#">Renew</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Learn</a></li>
+          <li><a href="#">Company</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#" class="btn-download">Download</a>
+          <div class="lang-select">🌐 English</div>
+          <div class="search-icon" title="Search"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Segment Center Filter Switch -->
+    <div class="segment-container">
+      <span class="segment-label">Personal</span>
+      <div class="toggle-switch"><div class="toggle-circle"></div></div>
+      <span class="segment-label">Business</span>
+    </div>
+
+    <!-- Hero Introduction Block Section -->
+    <main class="container hero-section">
+      <div class="hero-left">
+        <a href="#" class="news-badge">See what’s new in UE 2026.0 →</a>
+        <h1>Text editor for your most critical work.</h1>
+        <p>
+          Data professionals and IT teams choose UltraEdit for stronger security 
+          standards, unmatched performance with large files, and fast dedicated 
+          support when issues arise.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Try UltraEdit free</a>
+          <a href="#" class="btn-secondary">View plans</a>
+        </div>
+        <div class="os-support">
+          Available on: 💻 Windows 🍎 Mac 🐧 Linux
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://www.ultraedit.com/wp-content/uploads/2023/10/Window-v2.png" alt="App Editor Screenshot View" />
+      </div>
+    </main>
+
+    <!-- Corporate Clients Brand Section -->
+    <section class="brands-section">
+      <div class="container">
+        <p class="brands-subtitle">
+          Even with gigabyte-sized files and millions of lines, you can search, select, 
+          and edit as smoothly as you would with smaller files.
+        </p>
+        <div class="brands-grid">
+          <!-- Text Labels simulating company logos cleanly for beginners -->
+          <span>📋 BlueCross</span>
+          <span>🏦 BNP PARIBAS</span>
+          <span>💳 CapitalOne</span>
+          <span>🚗 CARFAX</span>
+          <span>🏢 CTBC HOLDING</span>
+          <span>🤝 First National</span>
+          <span>🇩🇪 IKB Bank</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problems Solving Main Features Row -->
+    <section class="problems-section">
+      <div class="container">
+        <h2 class="section-title">UltraEdit solves problems<br>basic text editors can't</h2>
+        
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="card-icon">📄</div>
+            <h3>Edit huge files with zero lag</h3>
+            <p>Open and edit 10GB+ files that freeze, crash, or slow down basic editors.</p>
+            <a href="#" class="card-link">More details ➔</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="card-icon">🔑</div>
+            <h3>Work with sensitive data</h3>
+            <p>Edit sensitive files in a secure, reliable environment with dedicated support behind it.</p>
+            <a href="#" class="card-link">More details ➔</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="card-icon">🗂️</div>
+            <h3>Navigate your entire workspace</h3>
+            <p>Move between local files, project folders, search results, and remote servers without leaving your editor.</p>
+            <a href="#" class="card-link">More details ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customers Feedback Testimonials Strip -->
+    <section class="testimonials-section container">
+      <h2 class="section-title">Trusted by professionals and organizations</h2>
+      <div class="rating-info">
+        Rated <strong>4.7</strong> <span class="stars">★★★★★</span> by verified users on <strong>G2</strong>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Review 1 -->
+        <div class="testimonial-card">
+          <p>"When my team started working with sufficiently large XML files for our product, we asked our IT team for a product where we could create/view and edit our files that was easy to learn. UltraEdit was just the thing we needed."</p>
+          <div class="author-name">— Engineering Lead</div>
+        </div>
+        <!-- Review 2 -->
+        <div class="testimonial-card">
+          <p>"The support has been really great. I made a feature request, knowing it wouldn't be a high priority, and a year later they contacted me to let me know that my feature had been implemented. I was very impressed."</p>
+          <div class="author-name">— Kent H.</div>
+        </div>
+        <!-- Review 3 -->
+        <div class="testimonial-card">
+          <p>"There are a lot of capabilities in UltraEdit that would typically require using multiple products to achieve the same results. Everything is in one product and well integrated, along with the easy creation of macros."</p>
+          <div class="author-name">— DevOps Engineer</div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
