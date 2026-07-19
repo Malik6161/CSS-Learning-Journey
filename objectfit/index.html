@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectFit</title>
+    <style>
+        .container {
+            height: 634px;
+            width: 688px;
+            border: 2px solid black;
+            /* background-color: aqua; */
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1nV5HX-sT5M9Magwp8s7VtxN8E54DIXLOo-y-dbG4Rw&s=10);
+            background-position: center center;
+
+            /* if the image is smaller than the container than it repeats on the x-axis and y-axis we can also stop it or repeats in both directions of x and y-axis. */
+            
+            background-repeat: no-repeat;
+        }
+        img{
+            height: 488px;
+            width: 466px;
+
+        /* object-fit: fill; is the by defult value 
+           but mostly we use the cover and the contain property */
+
+            object-fit: cover;
+            object-position: bottom right;
+            /* we can also gave specific values in the 
+               object-position: 12px 20px */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1nV5HX-sT5M9Magwp8s7VtxN8E54DIXLOo-y-dbG4Rw&s=10"
+            alt="Image"> -->
+    </div>
+</body>
+
+</html>
