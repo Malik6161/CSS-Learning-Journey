@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <style>
+        .container {
+            background-color: rgb(42, 159, 165);
+            width: 50vw;
+            height: 40vh;
+        }
+
+        .box {
+            /* background-color: aqua; */
+            width: 34px;
+            height: 45px;
+
+            /* Different properties in the Animation */
+
+            animation-name: learningAnimation, learningAnimation2;
+            animation-duration: 3s, 3s;
+            animation-iteration-count: 1, 1;
+            animation-timing-function: ease-in-out, ease;
+            animation-delay: 3s, 3s;
+            animation-direction: alternate-reverse, normal;
+            animation-play-state: running, running;
+
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; FOr all in single line */
+
+        }
+
+        @keyframes learningAnimation {
+            from {
+                background-color: rgb(255, 0, 76);
+            }
+
+            to {
+                background-color: blue;
+            }
+        }
+
+        /* We also add multiple animations.*/
+
+        @keyframes learningAnimation2 {
+            0% {
+                transform: translateX(0px) rotate(100deg);
+            }
+
+            20% {
+                transform: translateX(200px) rotate(200deg);
+            }
+
+            50% {
+                transform: translateX(500px) rotate(220deg);
+
+            }
+
+            70% {
+
+                transform: translateX(700px) rotate(220deg);
+            }
+
+            100% {
+                transform: translateX(1000px) rotate(300deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">box</div>
+    </div>
+</body>
+
+</html>
