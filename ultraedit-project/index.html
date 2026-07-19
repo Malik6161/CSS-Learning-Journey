@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
       * {
@@ -31,19 +31,21 @@
         padding: 12px 20px;
         font-weight: 500;
       }
-  .top-banner a {
-    color: #000000;
-    text-decoration: underline;
-    margin-left: 5px;
-    font-weight: 600;
-  }
-      header{
+      .top-banner a {
+        color: #000000;
+        text-decoration: underline;
+        margin-left: 5px;
+        font-weight: 600;
+      }
+      header {
         background-color: #ffffff;
         max-width: 1200px;
-        max-width: 0 auto;
+        margin: 0 auto;
         padding: 15px 30px;
         border-radius: 12px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.05),
+          0 2px 4px -1px rgba(0, 0, 0, 0.03);
         border: 1px solid #e5e7eb;
       }
       .navbar-box {
@@ -58,11 +60,11 @@
       nav {
         display: flex;
         justify-content: space-around;
-        align-items: center; /*used when only one row*/
+        align-items: center;
       }
       .logo {
-       display: flex;
-       align-items: center;
+        display: flex;
+        align-items: center;
       }
       .logo img {
         width: 130px;
@@ -85,41 +87,53 @@
         gap: 4px;
       }
       .nav-links li a::after {
-        content: "^";
-        transform: rotate(180deg);
+        content: "";
         display: inline-block;
-        font-size: 07rem;
+        width: 4px;
+        height: 4px;
+        border-right: 2px solid #666666;
+        border-bottom: 2px solid #666666;
+        transform: rotate(45deg);
+        margin-left: 6px;
         margin-top: -2px;
+        transition: transform 0.2s ease;
       }
-      .nav-links li.no-arrow a::after{
+      .nav-links li.no-arrow a::after {
         display: none;
       }
-      nav.actions {
+
+      .nav-actions {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 24px;
+        flex-shrink: 0;
       }
-    .btn-download{
-      background-color: #ffd200;
-      color: #000000;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 100px 24px;
-      transition: background-color 0.2s;
-    } 
-    .btn-download:hover{
-      background-color: #e6bd00;
-    }
-    .lang-select {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: #333333;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-    .search-icon {
+
+      .btn-download {
+        background-color: #ffd200;
+        color: #000000;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 10px 24px;
+        border-radius: 4px;
+        white-space: nowrap;
+        transition: background-color 0.2s;
+      }
+      .btn-download:hover {
+        background-color: #e6bd00;
+      }
+      .lang-select {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #333333;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .search-icon {
         width: 16px;
         height: 16px;
         border: 2px solid #333333;
@@ -135,35 +149,27 @@
         height: 6px;
         background-color: #333333;
         transform: rotate(-45deg);
-        bottom: -5px;
+        bottom: -4px;
         right: -3px;
-      }
-      .right ul {
-        display: flex;
-        gap: 28px;
-        list-style: none;
-      }
-      .right ul li {
-        list-style: none;
-        display: flex;
-        align-items: center;
       }
     </style>
   </head>
   <body>
     <!-- Top Banner -->
     <div class="top-banner">
-      UE Core & Enterprise Subscriptions: Get 10% Off on your second year ⓘ 
+      UE Core & Enterprise Subscriptions: Get 10% Off on your second year ⓘ
       <a href="#">Buy Now →</a>
     </div>
 
     <!-- Navigation Header -->
     <header>
       <nav class="navbar-box">
-        
         <!-- Logo -->
         <div class="logo">
-          <img src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-logo.svg" alt="UltraEdit Logo" />
+          <img
+            src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-logo.svg"
+            alt="UltraEdit Logo"
+          />
         </div>
 
         <!-- Center Menu Links -->
@@ -179,17 +185,12 @@
         <!-- Right Side Controls -->
         <div class="nav-actions">
           <a href="#" class="btn-download">Download</a>
-          
-          <div class="lang-select">
-            <!-- Simple Globe Emoji representation -->
-            🌐 English
-          </div>
-          
+
+          <div class="lang-select">🌐 English</div>
+
           <div class="search-icon" title="Search"></div>
         </div>
-
       </nav>
     </header>
-
   </body>
 </html>
